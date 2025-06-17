@@ -1,8 +1,6 @@
 # Shun4MIDI-Bot
 Future Discord Bot for the Shun4MIDI project, probably coded in C++ (Yes, I promised I would return to deving in June when the semester ends, I would keep my promise)
 
-The semester technically ended a few days ago but my last final project is due only after around 36 hours, so I probably wouldn't write any code here for a while, forgive me.
-
 This repo is totally not to distance myself from the actual Shun4MIDI code (Only cool people like the you reading this would find it XD).
 
 Yes, there is a possibility Shun4MIDI would be a Discord Bot before it is a website or a library (Probably a C++ library because I'm biased and there are so few libraries in C++ with something this cool), because I cannot get myself to code sometimes for the life of me but use Discord too much :|
