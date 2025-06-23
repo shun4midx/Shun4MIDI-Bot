@@ -48,6 +48,10 @@ Note::Note() { // Default constructor
     octave = 1;
 }
 
+Note::Note(const char* note_name)
+  : Note(std::string(note_name))
+{}
+
 Note::Note(const std::string& note_name) {
     parseName(note_name);
 } 
@@ -67,6 +71,11 @@ Note& Note::operator=(const Note& _note) {
     letter = _note.letter;
     alteration = _note.alteration;
     octave = _note.octave;
+    return *this;
+}
+
+Note& Note::operator=(const char* note_name) {
+    parseName(note_name);
     return *this;
 }
 
@@ -291,9 +300,11 @@ bool Note::operator==(const std::string& note_name) const {
     return (*this == Note(note_name));
 }
 
-std::ostream& Shun4MIDI::operator<<(std::ostream& o, const Note& note) {
+namespace Shun4MIDI {
+std::ostream& operator<<(std::ostream& o, const Note& note) {
     o << note.name();
     return o;
+}
 }
 
 // ======== HELPER FUNCTIONS ======== //

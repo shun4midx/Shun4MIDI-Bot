@@ -66,9 +66,11 @@ public:
 
     // Constructors
     Note();
+    Note(const char* note_name);
     Note(const std::string& note_name);
     Note(int _semitones, int _alteration, int _micro_offset = 0);
     Note& operator=(const Note& _note);
+    Note& operator=(const char* note_name);
     Note& operator=(const std::string& note_name);
 
     // ======== METHODS ========= //
