@@ -241,7 +241,7 @@ Note Note::enharmonic(char base_letter, int prefer_alteration) const { // X for 
         int sym_count = abs(alter) + abs(micro);
 
         // Push
-        cands.push_back({L, alter, micro, sym_count, cand_octave, abs(diff)});
+        cands.push_back({L, alter, micro, sym_count, cand_octave, fabs(diff)});
     }
 
     // Filter by base letter and preferred alteration
