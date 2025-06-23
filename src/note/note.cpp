@@ -11,6 +11,7 @@
 #include <regex>
 #include <stdexcept>
 #include <unordered_map>
+#include <math.h>
 #include "note.h"
 
 using namespace Shun4MIDI;
