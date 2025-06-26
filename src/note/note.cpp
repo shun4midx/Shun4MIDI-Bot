@@ -15,7 +15,7 @@
 #include "note.h"
 
 using namespace Shun4MIDI;
-static const std::regex parseStrRegex(R"(^([A-Ga-g])([ud]?)([b#]{0,2})(\d+)?$)");
+static const std::regex parseStrRegex(R"(^([A-Ga-g])([ud]?)(x|[b#]{0,2})(\d+)?$)");
 
 // ======== PRELIMINARIES ========= //
 // get() functions
