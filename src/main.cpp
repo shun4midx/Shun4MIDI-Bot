@@ -164,7 +164,7 @@ int main() {
             dpp::interaction_response resp(dpp::ir_autocomplete_reply);
 
             // if (cmd == "enharmonic" || cmd == "enharmonic_from_base_letter" || cmd == "are_enharmonic") {
-                static std::vector<std::string> auto_items = {"Sharps", "Flats", "None"};
+                static std::vector<std::string> auto_items = {"Sharp", "Flat", "None"};
                 for (std::string item : auto_items) {
                     if (item.rfind(prefix, 0) == 0) { // Matches prefix
                         resp.add_autocomplete_choice(dpp::command_option_choice(item, item));
