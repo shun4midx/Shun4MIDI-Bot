@@ -160,13 +160,13 @@ int Note::noteToSemitone(char _letter, int _alteration, int _octave) {
     // Throw exceptions
     int letter_semitone;
     if (letterToSemitone.find(_letter) == letterToSemitone.end()) {
-        throw std::invalid_argument("Invalid letter: " + std::to_string(_letter));
+        throw std::invalid_argument("Invalid letter: " + std::string(1, _letter));
     } else {
         letter_semitone = letterToSemitone.at(_letter);
     }
 
     if (!validOctave(_letter, _octave)) {
-        throw std::out_of_range(("Out of range letter octave combination: " + std::to_string(_letter)) + std::to_string(_octave));
+        throw std::out_of_range(("Out of range letter octave combination: " + std::string(1, _letter)) + std::to_string(_octave));
     }
 
     // Calculate
@@ -182,7 +182,7 @@ int Note::noteToSemitone(char _letter, int _alteration, int _octave) {
 Note Note::enharmonic(char base_letter, int prefer_alteration) const { // X for default, also we ofc assume the 'simplest' enharmonic for default
     // Catch invalid inputs
     if (base_letter != 'X' && (base_letter < 'A' || base_letter > 'G')) {
-        throw std::invalid_argument("Invalid base letter requested: " + std::string(base_letter, 1));
+        throw std::invalid_argument("Invalid base letter requested: " + std::string(1, base_letter));
     }
 
     // Otherwise
@@ -270,7 +270,7 @@ Note Note::enharmonic(char base_letter, int prefer_alteration) const { // X for 
     }
 
     if (cands.empty()) {
-        throw std::runtime_error("No reasonable enharmonic found");
+        throw std::runtime_error("No reasonable enharmonic found for " + this->name() + " with base letter " + std::string(1, base_letter));
     }
 
     // Pick best by error then by symbol count
@@ -328,7 +328,7 @@ void Note::parseName(const std::string& note_name) {
         if (octave < 0) {
             throw std::invalid_argument("Invalid octave: " + std::to_string(octave));
         } else if (octave == 0 && letter > 'B') {
-            throw std::invalid_argument(("Invalid octave for letter: " + std::string(letter, 1)) + std::to_string(octave));
+            throw std::invalid_argument(("Invalid octave for letter: " + std::string(1, letter)) + std::to_string(octave));
         }
     }
 
